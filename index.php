@@ -397,7 +397,7 @@ function doEdit() {
 		echo 'Not logged in. (How did that happen?)';
 		exit(0);
 	}
-	$page = 'User talk:'.$api_query->query->userinfo->name;
+	$page = $api_query->query->userinfo->name;
 
 	// Now perform the edit
 	$api_query = header('Location: http://www.example.com/'.$page);
