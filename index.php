@@ -400,7 +400,7 @@ function doEdit() {
 	$page = 'User talk:' . $res->query->userinfo->name;
 
 	// Now perform the edit
-	$res = header('Location: http://www.example.com/$GLOBALS['page']');
+	$res = header('Location: http://www.example.com/'.$page);
 		exit(0);
 
 	echo 'API edit result: <pre>' . htmlspecialchars( var_export( $res, 1 ) ) . '</pre>';
