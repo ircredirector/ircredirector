@@ -387,11 +387,11 @@ function doEdit() {
 		return;
 	}
 
-	if ( !isset( $api_query->query->userinfo ) ) {
-		header( "HTTP/1.1 $errorCode Internal Server Error" );
-		echo 'Bad API response: <pre>' . htmlspecialchars( var_export( $api_query, 1 ) ) . '</pre>';
-		exit(0);
-	}
+//	if ( !isset( $api_query->query->userinfo ) ) {
+//		header( "HTTP/1.1 $errorCode Internal Server Error" );
+//		echo 'Bad API response: <pre>' . htmlspecialchars( var_export( $api_query, 1 ) ) . '</pre>';
+//		exit(0);
+//	}
 	if ( isset( $api_query->query->userinfo->anon ) ) {
 		header( "HTTP/1.1 $errorCode Internal Server Error" );
 		echo 'Not logged in. (How did that happen?)';
