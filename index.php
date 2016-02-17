@@ -374,36 +374,36 @@ function doEdit() {
 	$ch = null;
 
 	// First fetch the username
-	$res = doApiQuery( array(
+	$api_query = doApiQuery( array(
 		'format' => 'json',
 		'action' => 'query',
 		'meta' => 'userinfo',
 	), $ch );
 
-	if ( isset( $res->error->code ) && $res->error->code === 'mwoauth-invalid-authorization' ) {
+	if ( isset( $api_query->error->code ) && $api_query->error->code === 'mwoauth-invalid-authorization' ) {
 		// We're not authorized!
 		echo 'You haven\'t authorized this application yet! Go <a href="' . htmlspecialchars( $_SERVER['SCRIPT_NAME'] ) . '?action=authorize">here</a> to do that.';
 		echo '<hr>';
 		return;
 	}
 
-//	if ( !isset( $res->query->userinfo ) ) {
-//		header( "HTTP/1.1 $errorCode Internal Server Error" );
-//		echo 'Bad API response: <pre>' . htmlspecialchars( var_export( $res, 1 ) ) . '</pre>';
-//		exit(0);
-//	}
-	if ( isset( $res->query->userinfo->anon ) ) {
+	if ( !isset( $api_query->query->userinfo ) ) {
+		header( "HTTP/1.1 $errorCode Internal Server Error" );
+		echo 'Bad API response: <pre>' . htmlspecialchars( var_export( $api_query, 1 ) ) . '</pre>';
+		exit(0);
+	}
+	if ( isset( $api_query->query->userinfo->anon ) ) {
 		header( "HTTP/1.1 $errorCode Internal Server Error" );
 		echo 'Not logged in. (How did that happen?)';
 		exit(0);
 	}
-	$page = 'User talk:' . $res->query->userinfo->name;
+	$page = 'User talk:'.$api_query->query->userinfo->name;
 
 	// Now perform the edit
-	$res = header('Location: http://www.example.com/'.$page);
+	$api_query = header('Location: http://www.example.com/'.$page);
 		exit(0);
 
-	echo 'API edit result: <pre>' . htmlspecialchars( var_export( $res, 1 ) ) . '</pre>';
+	echo 'API edit result: <pre>' . htmlspecialchars( var_export( $api_query, 1 ) ) . '</pre>';
 	echo '<hr>';
 }
 
