@@ -10,8 +10,8 @@ use MediaWiki\OAuthClient\ClientConfig;
 use MediaWiki\OAuthClient\Consumer;
 use MediaWiki\OAuthClient\Client;
 
-$endpoint = 'https://localhost/w/index.php?title=Special:OAuth';
-$redir = 'https://localhost/view/Special:OAuth?';
+$endpoint = 'https://meta.wikimedia.org/w/index.php?title=Special:OAuth';
+$redir = 'https://meta.wikimedia.org/view/Special:OAuth?';
 $consumerKey = 'your key here';
 $consumerSecret = 'your shared secret here';
 
