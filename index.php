@@ -12,8 +12,8 @@ use MediaWiki\OAuthClient\Client;
 
 $endpoint = 'https://meta.wikimedia.org/w/index.php?title=Special:OAuth';
 $redir = 'https://meta.wikimedia.org/view/Special:OAuth?';
-$consumerKey = 'your key here';
-$consumerSecret = 'your shared secret here';
+$consumerKey = '40a96777692df4ea05c5c8c9f3029f76';
+$consumerSecret = /data/project/ircredirector/secret.ini);
 
 $conf = new ClientConfig( $endpoint );
 $conf->setRedirURL( $redir );
