@@ -20,7 +20,7 @@ $conf->setRedirURL( $redir );
 $conf->setConsumer( new Consumer( $consumerKey, $consumerSecret ) );
 
 $client = new Client( $conf );
-$client->setCallback( 'https://localhost/oauth/callback' );
+$client->setCallback( 'https://tools.wmflabs.org/ircredirector/index.php' );
 
 // Step 1 = Get a request token
 list( $next, $token ) = $client->initiate();
