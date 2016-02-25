@@ -4,20 +4,20 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f1c5e769110f42affdda62b92e213207",
+    "hash": "7fc801f82c826eca3d1dcc7247a55190",
     "packages": [
         {
             "name": "mediawiki/oauthclient",
-            "version": "dev-master",
+            "version": "0.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wikimedia/mediawiki-oauthclient-php.git",
-                "reference": "e335a2f6e1f54501fd9698ef794ac7cd13be0385"
+                "reference": "1eb5c5c2833616b3352671783034d9781dd6b897"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wikimedia/mediawiki-oauthclient-php/zipball/e335a2f6e1f54501fd9698ef794ac7cd13be0385",
-                "reference": "e335a2f6e1f54501fd9698ef794ac7cd13be0385",
+                "url": "https://api.github.com/repos/wikimedia/mediawiki-oauthclient-php/zipball/1eb5c5c2833616b3352671783034d9781dd6b897",
+                "reference": "1eb5c5c2833616b3352671783034d9781dd6b897",
                 "shasum": ""
             },
             "require": {
@@ -54,7 +54,7 @@
             ],
             "description": "PHP OAuth client for use with Wikipedia and other MediaWiki-based wikis running the OAuth extension",
             "homepage": "https://www.mediawiki.org/wiki/oauthclient-php",
-            "time": "2016-01-20 01:38:05"
+            "time": "2016-01-16 01:59:36"
         },
         {
             "name": "psr/log",
@@ -98,9 +98,7 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "mediawiki/oauthclient": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

@@ -1,5 +1,20 @@
 {
+    "name": "tom29739/ircredirector",
+    "description": "Uses OAuth to find the user's onwiki username and then redirects to KiwiIRC with the user's onwiki username.",
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "name": "tom29739",
+            "role": "Developer"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/tom29739/ircredirector"
+        }
+    ],
     "require": {
-        "mediawiki/oauthclient": "dev-master"
+        "mediawiki/oauthclient": "0.1.*"
     }
 }
