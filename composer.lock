@@ -1,10 +1,11 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "7fc801f82c826eca3d1dcc7247a55190",
+    "hash": "bb5f039c5186e6b9adbdc19c6bc08eb9",
+    "content-hash": "b4f07faa5b770945e3b2c722f0e698ce",
     "packages": [
         {
             "name": "mediawiki/oauthclient",

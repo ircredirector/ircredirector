@@ -13,7 +13,7 @@ use MediaWiki\OAuthClient\Client;
 $endpoint = 'https://meta.wikimedia.org/w/index.php?title=Special:OAuth';
 $redir = 'https://meta.wikimedia.org/view/Special:OAuth?';
 $consumerKey = '40a96777692df4ea05c5c8c9f3029f76';
-$consumerSecret = file_get_contents('/data/project/ircredirector/secret.ini');
+$consumerSecret = file_get_contents('C:/Users/Tom D/Documents/PhpStormProjects/ircredirector/secret.ini');
 
 $conf = new ClientConfig( $endpoint );
 $conf->setRedirURL( $redir );
@@ -49,14 +49,14 @@ echo "Authenticated user {$ident->username}\n";
 echo "Getting user info: ";
 echo $client->makeOAuthCall(
     $accessToken,
-    'https://localhost/wiki/api.php?action=query&meta=userinfo&uiprop=rights&format=json'
+    'https://meta.wikimedia.org/wiki/api.php?action=query&meta=userinfo&uiprop=rights&format=json'
 );
 
 $client->setExtraParams( $apiParams ); // sign these too
 
 echo $client->makeOAuthCall(
     $accessToken,
-    'https://localhost/wiki/api.php',
+    'https://meta.wikimedia.org/wiki/api.php',
     true,
     $apiParams
 );
