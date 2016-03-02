@@ -19,7 +19,7 @@
  * - consumerKey: The "consumer token" given to you when registering your app
  * - consumerSecret: The "secret token" given to you when registering your app
  */
-$inifile = '~/oauth.ini';
+$inifile = '/data/project/ircredirector/oauth.ini';
 
 /**
  * Set this to the Special:OAuth/authorize URL.
@@ -180,7 +180,7 @@ function doAuthorizationRedirect() {
         'format' => 'json',
 
         // OAuth information
-        'oauth_callback' => 'oob', // Must be "oob" for MWOAuth
+        'oauth_callback' => 'http://tools.wmflabs.org/ircredirector/index4.php', // Must be "oob" for MWOAuth
         'oauth_consumer_key' => $gConsumerKey,
         'oauth_version' => '1.0',
         'oauth_nonce' => md5( microtime() . mt_rand() ),
