@@ -10,17 +10,17 @@ use MediaWiki\OAuthClient\ClientConfig;
 use MediaWiki\OAuthClient\Consumer;
 use MediaWiki\OAuthClient\Client;
 
-$endpoint = 'https://meta.wikimedia.org/w/index.php?title=Special:OAuth';
-$redir = 'https://meta.wikimedia.org/view/Special:OAuth?';
+$endpoint = 'http://mediawiki.org/w/index.php?title=Special:OAuth';
+$redir = 'http://mediawiki.org/wiki/Special:OAuth?';
 $consumerKey = '40a96777692df4ea05c5c8c9f3029f76';
-$consumerSecret = file_get_contents('C:/Users/Tom D/Documents/PhpStormProjects/ircredirector/secret.ini');
+$consumerSecret = file_get_contents('~/secret.ini');
 
 $conf = new ClientConfig( $endpoint );
 $conf->setRedirURL( $redir );
 $conf->setConsumer( new Consumer( $consumerKey, $consumerSecret ) );
 
 $client = new Client( $conf );
-$client->setCallback( 'https://tools.wmflabs.org/ircredirector/index.php' );
+$client->setCallback( 'http://tools.wmflabs.org/ircredirector/index.php' );
 
 // Step 1 = Get a request token
 list( $next, $token ) = $client->initiate();
@@ -49,14 +49,14 @@ echo "Authenticated user {$ident->username}\n";
 echo "Getting user info: ";
 echo $client->makeOAuthCall(
     $accessToken,
-    'https://meta.wikimedia.org/wiki/api.php?action=query&meta=userinfo&uiprop=rights&format=json'
+    'http://mediawiki.org/wiki/api.php?action=query&meta=userinfo&uiprop=rights&format=json'
 );
 
 $client->setExtraParams( $apiParams ); // sign these too
 
 echo $client->makeOAuthCall(
     $accessToken,
-    'https://meta.wikimedia.org/wiki/api.php',
+    'http://mediawiki.org/wiki/api.php',
     true,
     $apiParams
 );
